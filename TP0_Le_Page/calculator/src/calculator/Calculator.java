@@ -42,6 +42,10 @@ public class Calculator {
         int result;
         result=0;
         
+        if ((operateur<=1)||(operateur>=5)){
+            System.out.println("L'operateur n'est pas bon");
+        }
+        
         if (operateur==1){
         result=operande1+operande2;
         }
