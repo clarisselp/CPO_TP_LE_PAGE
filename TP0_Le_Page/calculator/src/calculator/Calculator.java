@@ -42,26 +42,26 @@ public class Calculator {
         int result;
         result=0;
         
-        if ((operateur<=1)||(operateur>=5)){
+        if ((operateur<1)||(operateur>5)){
             System.out.println("L'operateur n'est pas bon");
-        }
-        
-        if (operateur==1){
-        result=operande1+operande2;
-        }
-        if (operateur==2){
-        result=operande1-operande2;
-        }
-        if (operateur==3){
-        result=operande1*operande2;
-        }
-        if (operateur==4){
-        result=operande1/operande2;
-        }
-        if (operateur==5){
-        result=operande1%operande2;
-        }
+        }else{
+            if (operateur==1){
+                result=operande1+operande2;
+            }
+            if (operateur==2){
+                result=operande1-operande2;
+            }
+            if (operateur==3){
+                result=operande1*operande2;
+            }
+            if (operateur==4){
+                result=operande1/operande2;
+            }
+            if (operateur==5){
+                result=operande1%operande2;
+            }
         System.out.println("Le resultat est: "+result+"");
+        }
     }
     
 }
