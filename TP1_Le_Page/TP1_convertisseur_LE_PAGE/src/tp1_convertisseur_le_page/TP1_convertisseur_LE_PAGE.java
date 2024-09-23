@@ -20,13 +20,24 @@ public class TP1_convertisseur_LE_PAGE {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double v1;
-        double deg_K;
+        //double deg_K;
         
-        System.out.println("\n Entrer un nombre réelle :");
+        System.out.println("\n Bonjour, saisissez une valeur :");
         v1=sc.nextDouble(); // On demande a sc de donner le prochain entier
         
-        deg_K=v1+273.15;
-        System.out.println("La température en Kelvin est de: "+deg_K+" K.");
+        System.out.println("Saisissez la conversion que vous souhaiter effectuer :")
+        
+        System.out.println("\n Bonjour, saisissez une valeur :");
+        v1=sc.nextDouble(); // On demande a sc de donner le prochain entier
+        
+        //deg_K=v1+273.15;
+        //System.out.println("La température en Kelvin est de: "+deg_K+" K.");
+        System.out.println("La température en Kelvin est de: "+CelciusVersKelvin(v1)+" K.");
+        System.out.println("La température en Kelvin est de: "+KelvinVersCelcius(v1)+" K.");
+        System.out.println("La température en Kelvin est de: "+FarenheitVersCelcius(v1)+" K.");
+        System.out.println("La température en Kelvin est de: "+CelciusVersFarenheit(v1)+" K.");
+        System.out.println("La température en Kelvin est de: "+KelvinVersFarenheit(v1)+" K.");
+        System.out.println("La température en Kelvin est de: "+FarenheitVersKelvin(v1)+" K.");
     }
     public static double CelciusVersKelvin (double tCelcius) {
         double tKelvin;
