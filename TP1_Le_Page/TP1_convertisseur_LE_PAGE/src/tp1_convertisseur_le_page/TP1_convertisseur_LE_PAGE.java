@@ -18,14 +18,9 @@ public class TP1_convertisseur_LE_PAGE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         double v1;
         double deg_K;
-        int res_add,res_sous,res_mult;
-        res_add=0;
-        res_sous=0;
-        res_mult=0;
-
-        Scanner sc = new Scanner(System.in);
         
         System.out.println("\n Entrer un nombre réelle :");
         v1=sc.nextDouble(); // On demande a sc de donner le prochain entier
