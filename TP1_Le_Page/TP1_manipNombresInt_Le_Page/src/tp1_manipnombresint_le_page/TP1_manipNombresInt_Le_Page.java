@@ -38,8 +38,8 @@ public class TP1_manipNombresInt_Le_Page {
         res_sous=nb1-nb2;
         res_mult=nb1*nb2;
         System.out.println("Le resultat de l'addition est: "+res_add+"");
-        System.out.println("Le resultat de l'addition est: "+res_sous+"");
-        System.out.println("Le resultat de l'addition est: "+res_mult+"");
+        System.out.println("Le resultat de la soustraction est: "+res_sous+"");
+        System.out.println("Le resultat de la multiplication est: "+res_mult+"");
         System.out.println("Le quotient des deux nombre est: "+nb1/nb2+" et son reste est de:"+nb1%nb2+" ");
        
     }
