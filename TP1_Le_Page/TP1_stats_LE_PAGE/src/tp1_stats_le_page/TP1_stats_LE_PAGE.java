@@ -47,9 +47,6 @@ public class TP1_stats_LE_PAGE {
         for (int i = 0; i < faces.length; i++) {
             System.out.println("Face " + (i + 1) + " : " + faces[i] + " fois");
         }
-
-        // Fermeture du scanner
-        scanner.close();
     }
     
 }
