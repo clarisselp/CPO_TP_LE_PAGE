@@ -21,7 +21,7 @@ public class TP1_stats_LE_PAGE {
      */
     public static void main(String[] args) {
         // Création d'un tableau de 6 entiers pour représenter les faces du dé
-        int[] faces = new int[6]; // Toutes les cases sont initialisées à 0
+        int[] des = new int[6]; // Toutes les cases sont initialisées à 0
 
         // Création d'un scanner pour lire l'entrée utilisateur
         Scanner scanner = new Scanner(System.in);
@@ -39,13 +39,22 @@ public class TP1_stats_LE_PAGE {
             int resultat = random.nextInt(6);
             
             // Incrémenter la case correspondant à la face du dé
-            faces[resultat]++;
+            des[resultat]++;
         }
-
+        
         // Affichage du résultat
-        System.out.println("Résultat des lancers de dés :");
-        for (int i = 0; i < faces.length; i++) {
-            System.out.println("Face " + (i + 1) + " : " + faces[i] + " fois");
+        //System.out.println("Résultat des lancers de dés :");
+        //for (int i = 0; i < des.length; i++) {
+           // System.out.println("Face " + (i + 1) + " : " + des[i] + " fois");
+        //}
+        
+        // Affichage du résultat en pourcentages
+        System.out.println("Résultat des lancers de dés (en pourcentage) :");
+        for (int i = 0; i < des.length; i++) {
+            // Calculer le pourcentage
+            double pourcentage = ((double) des[i] / m) * 100;
+            // Afficher le pourcentage avec deux décimales
+            System.out.printf("Face %d : %.2f%%\n", (i + 1), pourcentage);
         }
     }
     
