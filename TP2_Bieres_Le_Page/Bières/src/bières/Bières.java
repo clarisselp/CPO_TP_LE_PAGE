@@ -2,7 +2,7 @@
  * TP2_LE_PAGE
  * TDC
  * réalisation d'une première classe, de la création de quelques objets.
- * 16 Octobre 2024
+ * 14 Octobre 2024
  */
 package bières;
 
