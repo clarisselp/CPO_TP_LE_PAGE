@@ -1,6 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * TP2_convertisseurObjet_LE_PAGE
+ * TDC
+ * réalisation d'un convertisseur de températures en version objet
+ * 16 Octobre 2024
  */
 package tp2_convertisseurobjet_le_page;
 
@@ -56,7 +58,7 @@ public class Convertisseur {
     
     @Override
     public String toString () {
-        return "nb de conversions"+ nbConversions;
+        return "Nombre de conversions effectuées : " + nbConversions;
     }
 
 }
