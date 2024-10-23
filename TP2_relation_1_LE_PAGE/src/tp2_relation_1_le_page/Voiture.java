@@ -25,14 +25,8 @@ public class Voiture {
         this.proprietaire = null;
     }
     
-    // Méthode pour définir le propriétaire de la voiture
-    public void setProprietaire(Personne proprietaire) {
-        this.proprietaire = proprietaire;
-    }
-    
     @Override
     public String toString () {
-        String proprietaireInfo = (proprietaire != null) ? "Propriétaire: " + proprietaire.Prenom + " " + proprietaire.Nom : "Pas de propriétaire";
         return "Modele : " +Modele+" Marque:"+Marque+" PuissanceCV:"+PuissanceCV;
     }
     
