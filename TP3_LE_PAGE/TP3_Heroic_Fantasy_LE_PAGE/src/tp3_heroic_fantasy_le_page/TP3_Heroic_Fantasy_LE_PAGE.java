@@ -8,6 +8,8 @@ classe de personnage a son arme de prédilection. Utilisatuin de l’héritage
  */
 package tp3_heroic_fantasy_le_page;
 
+import Armes.*;
+import Personnages .*;
 import java.util.ArrayList;
 
 /**
@@ -30,10 +32,10 @@ public class TP3_Heroic_Fantasy_LE_PAGE {
         Baton charme = new Baton("Charme", 5, 6);
 
         // Affichage des informations des objets créés
-        System.out.println(excalibur);
-        System.out.println(durandal);
-        System.out.println(chene);
-        System.out.println(charme);
+        //System.out.println(excalibur);
+        //System.out.println(durandal);
+        //System.out.println(chene);
+        //System.out.println(charme);
         
         // Création d'un ArrayList pour stocker les armes
         ArrayList<Arme> armes = new ArrayList<Arme>(); 
@@ -49,7 +51,26 @@ public class TP3_Heroic_Fantasy_LE_PAGE {
             System.out.println(armes.get(i));
         }
         
+        // Création de deux magiciens avec des paramètres différents
+        Magicien gandalf = new Magicien("Gandalf", 65, true);  // Confirmé
+        Magicien garcimore = new Magicien("Garcimore", 44, false);  // Novice
 
-    }
-    
+        // Création de deux guerriers avec des paramètres différents
+        Guerrier conan = new Guerrier("Conan", 78, false);  // À pied
+        Guerrier lannister = new Guerrier("Lannister", 45, true);  // À cheval
+
+        // Création d'un ArrayList pour stocker les personnages
+        ArrayList<Personnage> personnages = new ArrayList<Personnage>();
+
+        // Ajout des personnages dans le tableau dynamique
+        personnages.add(gandalf);
+        personnages.add(garcimore);
+        personnages.add(conan);
+        personnages.add(lannister);
+        
+        // Affichage des caractéristiques des personnages
+        for (Personnage p : personnages) {
+            System.out.println(p);
+        }
+    }    
 }
