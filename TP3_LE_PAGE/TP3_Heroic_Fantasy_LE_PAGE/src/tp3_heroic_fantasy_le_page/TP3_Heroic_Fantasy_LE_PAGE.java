@@ -23,54 +23,50 @@ public class TP3_Heroic_Fantasy_LE_PAGE {
      */
     public static void main(String[] args) {
         
-        // Création des épées avec des paramètres différents
-        Epee excalibur = new Epee("Excalibur", 7, 5);
-        Epee durandal = new Epee("Durandal", 4, 7);
+        // Création des armes : 3 bâtons et 3 épées
+        Baton baton1 = new Baton("Baton de Feu", 3, 7);
+        Baton baton2 = new Baton("Baton de Glace", 4, 6);
+        Baton baton3 = new Baton("Baton de Tonnerre", 5, 5);
 
-        // Création des bâtons avec des paramètres différents
-        Baton chene = new Baton("Chene", 4, 5);
-        Baton charme = new Baton("Charme", 5, 6);
+        Epee epee1 = new Epee("Epee des Ombres", 6, 4);
+        Epee epee2 = new Epee("Epee de Lumière", 7, 3);
+        Epee epee3 = new Epee("Epee de l'Aube", 8, 2);
 
-        // Affichage des informations des objets créés
-        //System.out.println(excalibur);
-        //System.out.println(durandal);
-        //System.out.println(chene);
-        //System.out.println(charme);
-        
-        // Création d'un ArrayList pour stocker les armes
-        ArrayList<Arme> armes = new ArrayList<Arme>(); 
-    
-        // Ajout des armes dans le tableau dynamique
-        armes.add(excalibur);
-        armes.add(durandal);
-        armes.add(chene);
-        armes.add(charme);
+        // Création des personnages : 1 guerrier et 1 magicien
+        Guerrier guerrier = new Guerrier("Conan", 80, false); // Guerrier à pied
+        Magicien magicien = new Magicien("Merlin", 70, true); // Magicien confirmé
 
-        // Affichage des caractéristiques de chaque arme en parcourant le Vector
-        for (int i = 0; i < armes.size(); i++) {
-            System.out.println(armes.get(i));
-        }
-        
-        // Création de deux magiciens avec des paramètres différents
-        Magicien gandalf = new Magicien("Gandalf", 65, true);  // Confirmé
-        Magicien garcimore = new Magicien("Garcimore", 44, false);  // Novice
+        // Ajout des armes au guerrier : 1 bâton et 2 épées
+        guerrier.ajouterArme(baton1);
+        guerrier.ajouterArme(epee1);
+        guerrier.ajouterArme(epee2);
 
-        // Création de deux guerriers avec des paramètres différents
-        Guerrier conan = new Guerrier("Conan", 78, false);  // À pied
-        Guerrier lannister = new Guerrier("Lannister", 45, true);  // À cheval
+        // Faire choisir au guerrier la première épée
+        guerrier.equiperArme("Epee des Ombres");
 
-        // Création d'un ArrayList pour stocker les personnages
-        ArrayList<Personnage> personnages = new ArrayList<Personnage>();
+        // Ajout des armes au magicien : 2 bâtons et 1 épée
+        magicien.ajouterArme(baton2);
+        magicien.ajouterArme(baton3);
+        magicien.ajouterArme(epee3);
 
-        // Ajout des personnages dans le tableau dynamique
-        personnages.add(gandalf);
-        personnages.add(garcimore);
-        personnages.add(conan);
-        personnages.add(lannister);
-        
-        // Affichage des caractéristiques des personnages
-        for (Personnage p : personnages) {
-            System.out.println(p);
-        }
-    }    
+        // Affichage des caractéristiques des personnages avant de les fatiguer ou attaquer
+        System.out.println("\nCaractéristiques des personnages :");
+        System.out.println(guerrier);
+        System.out.println(magicien);
+
+        // Fatigue du guerrier
+        System.out.println("\nFatiguer le guerrier...");
+        guerrier.seFatiguer();
+        System.out.println("\nAprès fatigue, caractéristiques du guerrier :");
+        System.out.println(guerrier);
+
+        // Attaque du magicien contre le guerrier
+        System.out.println("\nLe magicien attaque le guerrier...");
+        magicien.attaquer(guerrier);
+
+        // Affichage des caractéristiques après l'attaque
+        System.out.println("\nAprès l'attaque, caractéristiques des personnages :");
+        System.out.println(guerrier);
+        System.out.println(magicien);
+    }
 }

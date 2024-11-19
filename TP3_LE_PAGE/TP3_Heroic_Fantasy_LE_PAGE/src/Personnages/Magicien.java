@@ -10,26 +10,45 @@ package Personnages;
  */
 public class Magicien extends Personnage {
     
-    private boolean confirme;
+    private boolean confirmé;
+    private static int nbMagiciens = 0;  // Compteur des magiciens
 
-    // Constructeur pour Magicien
-    public Magicien(String nom, int niveauVie, boolean confirme) {
-        super(nom, niveauVie);  // Appel du constructeur de la classe parent Personnage
-        this.confirme = confirme;
+    public Magicien(String nom, int niveauVie, boolean confirmé) {
+        super(nom, niveauVie);
+        this.confirmé = confirmé;
+        nbMagiciens++;  // Incrémenter le compteur de magiciens
     }
 
+    // Getter pour savoir si le magicien est confirmé
     public boolean estConfirme() {
-        return confirme;
+        return confirmé;
     }
 
-    public void setConfirme(boolean confirme) {
-        this.confirme = confirme;
+    // Setter pour modifier l'état confirmé
+    public void setConfirme(boolean confirmé) {
+        this.confirmé = confirmé;
     }
 
+    // Redéfinition de la méthode toString
     @Override
     public String toString() {
-        // Convertir le booléen en texte : "Confirmé" ou "Novice"
-        String statut = confirme ? "confirme" : "novice";
-        return super.toString() + " | Statut : " + statut;
+        String confirmation = confirmé ? "Confirmé" : "Non confirmé";
+        return super.toString() + " | Statut : " + confirmation;
+    }
+
+    // Méthode pour attaquer un autre personnage
+    public void attaquer(Personnage personnage) {
+        if (estVivant()) {
+            int pointsDeDommage = 20;  // Le magicien inflige 20 points de dégâts
+            personnage.estAttaque(pointsDeDommage);
+            System.out.println(this.getNom() + " attaque " + personnage.getNom() + " et lui inflige " + pointsDeDommage + " points de dégâts.");
+        } else {
+            System.out.println(this.getNom() + " ne peut pas attaquer car il est mort.");
+        }
+    }
+
+    // Getter pour obtenir le nombre de magiciens créés
+    public static int getNbMagiciens() {
+        return nbMagiciens;
     }
 }
