@@ -82,7 +82,7 @@ public abstract class Personnage implements etreVivant {
                 degats = armeEnMain.getAttaque() * ((Baton) armeEnMain).getAge();
             } else if (this instanceof Guerrier && armeEnMain instanceof Epee) {
                 // Guerrier avec épée : dégâts multipliés par la finesse de l'épée
-                degats = armeEnMain.getAttaque() * ((Epee) armeEnMain).getFinesse();
+                degats = armeEnMain.getAttaque() * ((Epee) armeEnMain).getIndiceFinesse();
             } else {
                 // Dégâts normaux si l'arme ne correspond à aucun des cas ci-dessus
                 degats = armeEnMain.getAttaque();

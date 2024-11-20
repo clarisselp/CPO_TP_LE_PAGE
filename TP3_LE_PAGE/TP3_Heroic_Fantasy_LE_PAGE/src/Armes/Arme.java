@@ -11,16 +11,23 @@ package Armes;
 public abstract class Arme {
     private String nom;
     private int nivAtt;
+    private int attaque;
     
     // Constructeur de la classe Arme
     public Arme(String nom, int nivAtt) {
         this.nom = nom;
         this.nivAtt = Math.min(nivAtt, 100);  // Assure que niveauAttaque <= 100
+        this.attaque = attaque;
     }
 
     // Getter pour le niveau d'attaque
     public int getNiveauAttaque() {
         return nivAtt;
+    }
+    
+    // Getter pour l'attaque
+    public int getAttaque() {
+        return attaque;
     }
     
     // Getter pour le nom de l'arme

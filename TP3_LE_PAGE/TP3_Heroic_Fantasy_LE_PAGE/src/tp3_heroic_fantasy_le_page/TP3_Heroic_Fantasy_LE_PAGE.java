@@ -23,50 +23,55 @@ public class TP3_Heroic_Fantasy_LE_PAGE {
      */
     public static void main(String[] args) {
         
-        // Création des armes : 3 bâtons et 3 épées
-        Baton baton1 = new Baton("Baton de Feu", 3, 7);
-        Baton baton2 = new Baton("Baton de Glace", 4, 6);
-        Baton baton3 = new Baton("Baton de Tonnerre", 5, 5);
+        // Création des épées
+    Epee excalibur = new Epee("Excalibur", 7, 5);
+    Epee durandal = new Epee("Durandal", 4, 7);
 
-        Epee epee1 = new Epee("Epee des Ombres", 6, 4);
-        Epee epee2 = new Epee("Epee de Lumière", 7, 3);
-        Epee epee3 = new Epee("Epee de l'Aube", 8, 2);
+    // Création des bâtons
+    Baton chene = new Baton("Chêne", 4, 5);
+    Baton charme = new Baton("Charme", 5, 6);
 
-        // Création des personnages : 1 guerrier et 1 magicien
-        Guerrier guerrier = new Guerrier("Conan", 80, false); // Guerrier à pied
-        Magicien magicien = new Magicien("Merlin", 70, true); // Magicien confirmé
+    // Création des personnages
+    Magicien magicien = new Magicien("Gandalf", 70, false); // Magicien non confirmé
+    Guerrier guerrier = new Guerrier("Aragorn", 90, true);  // Guerrier à cheval
 
-        // Ajout des armes au guerrier : 1 bâton et 2 épées
-        guerrier.ajouterArme(baton1);
-        guerrier.ajouterArme(epee1);
-        guerrier.ajouterArme(epee2);
+    // Ajout des armes aux personnages
+    magicien.ajouterArme(excalibur);
+    magicien.ajouterArme(chene);
 
-        // Faire choisir au guerrier la première épée
-        guerrier.equiperArme("Epee des Ombres");
+    guerrier.ajouterArme(durandal);
+    guerrier.ajouterArme(charme);
 
-        // Ajout des armes au magicien : 2 bâtons et 1 épée
-        magicien.ajouterArme(baton2);
-        magicien.ajouterArme(baton3);
-        magicien.ajouterArme(epee3);
+    // Équipement des armes
+    magicien.equiperArme("Chêne");  // Magicien choisit le bâton "Chêne"
+    guerrier.equiperArme("Durandal"); // Guerrier choisit l'épée "Durandal"
 
-        // Affichage des caractéristiques des personnages avant de les fatiguer ou attaquer
-        System.out.println("\nCaractéristiques des personnages :");
-        System.out.println(guerrier);
-        System.out.println(magicien);
+    // Affichage initial des caractéristiques des personnages
+    System.out.println("=== Caractéristiques initiales des personnages ===");
+    System.out.println(magicien);
+    System.out.println(guerrier);
 
-        // Fatigue du guerrier
-        System.out.println("\nFatiguer le guerrier...");
-        guerrier.seFatiguer();
-        System.out.println("\nAprès fatigue, caractéristiques du guerrier :");
-        System.out.println(guerrier);
+    // Attaque du magicien sur le guerrier
+    System.out.println("\n=== Le magicien attaque le guerrier ===");
+    magicien.attaquer(guerrier);
 
-        // Attaque du magicien contre le guerrier
-        System.out.println("\nLe magicien attaque le guerrier...");
-        magicien.attaquer(guerrier);
+    // Affichage après l'attaque du magicien
+    System.out.println("\n=== Après l'attaque du magicien ===");
+    System.out.println(magicien);
+    System.out.println(guerrier);
 
-        // Affichage des caractéristiques après l'attaque
-        System.out.println("\nAprès l'attaque, caractéristiques des personnages :");
-        System.out.println(guerrier);
-        System.out.println(magicien);
-    }
+    // Attaque du guerrier sur le magicien
+    System.out.println("\n=== Le guerrier attaque le magicien ===");
+    guerrier.attaquer(magicien);
+
+    // Affichage après l'attaque du guerrier
+    System.out.println("\n=== Après l'attaque du guerrier ===");
+    System.out.println(magicien);
+    System.out.println(guerrier);
+
+    // Vérification si les personnages sont vivants
+    System.out.println("\n=== Vérification si les personnages sont vivants ===");
+    System.out.println(magicien.getNom() + " est " + (magicien.estVivant() ? "vivant" : "mort"));
+    System.out.println(guerrier.getNom() + " est " + (guerrier.estVivant() ? "vivant" : "mort"));
+}
 }
